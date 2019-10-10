@@ -137,6 +137,100 @@ footer .logo {
 }
 
 
+/* Собственно сам слайдер */
+.slider{
+    max-width: 900px;
+    position: relative;
+    margin: auto;
+    height: auto;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    border: none !important;
+    box-shadow: none !important;
+}
+/* Кнопки вперед и назад */
+.slider .prev, .slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* При наведении на кнопки добавляем фон кнопок */
+.slider .prev:hover,
+.slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* Заголовок слайда */
+.slideText {
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    /* Выравнивание текста по горизонтали и по вертикали*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Тень*/
+    text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+}
+/* Кружочки */
+.slider-dots {
+    text-align: center;
+}
+.slider-dots_item{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active,
+.slider-dots_item:hover {
+    background-color: #aaa;
+}
+/* Анимация слайдов */
+.slider .item {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
 
 .news-block {
   width: 200px;
@@ -160,7 +254,7 @@ footer .logo {
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
-  margin-left: 40px;
+  margin-left: 50px;
     background: lightsalmon;;
 
 }
@@ -170,9 +264,10 @@ footer .logo {
   transition: 0.5s;
   }
 
-.news-block img {
-    max-width: 160px;
-    min-height: 160px;
+.news-block .wrap img {
+    max-width: 180px;
+
+    min-height: 240px;
 
 }
 .news-block h3 {
@@ -184,7 +279,7 @@ footer .logo {
 }
    .news-block i {
     font-style: normal;
-    margin-left: 60px;
+    margin-left: 70px;
     color: black;
 }
 
